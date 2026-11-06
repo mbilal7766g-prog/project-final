@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Weather app</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body{
+    background-image: url(assets/elg21-sky-5534319.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+</head>
+
+<body>
+<div id="rain" aria-hidden="true"></div>
+<div id="wind" aria-hidden="true"></div>
+
+<main class="app">
+  <header>
+    <div class="logo">
+      weathery
+      <small>WEATHER, IN A NEW day</small>
+    </div>
+    <div class="live">● LIVE WEATHER</div>
+  </header>
+
+  <section class="hero">
+    <h1>see every update.</h1>
+    <p>Your world, right now.</p>
+  </section>
+
+  <form class="search-wrap" id="searchForm">
+    <div class="search">
+      <input
+        id="cityInput"
+        type="text"
+        placeholder="Search a city..."
+        autocomplete="off"
+        aria-label="Search for a city"
+      >
+      <button type="submit">Search ↗</button>
+    </div>
+    <div class="suggestions" id="suggestions"></div>
+  </form>
+
+  <div id="status" role="status" aria-live="polite">
+    Loading weather...
+  </div>
+
+  <section class="glass">
+    <div class="current">
+      <div>
+        <h2 class="location" id="location">Karachi, Pakistan</h2>
+        <p class="date" id="date">Local date and time</p>
+
+        <div class="temperature">
+          <span id="temp">--</span><sup>°C</sup>
+        </div>
+
+        <p class="condition" id="condition">Loading conditions...</p>
+        <p class="feels" id="feels">Feels like --°C</p>
+      </div>
+
+      <div class="visual">
+        <span class="weather-icon" id="icon">🌤️</span>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">💧 Humidity</div>
+        <div class="metric-value" id="humidity">--%</div>
+        <div class="metric-sub">Air moisture</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">〰️ Wind</div>
+        <div class="metric-value" id="windSpeed">-- km/h</div>
+        <div class="metric-sub" id="windDirection">Direction --</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">🌡️ Pressure</div>
+        <div class="metric-value" id="pressure">-- mb</div>
+        <div class="metric-sub">Air pressure</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">👁️ Visibility</div>
+        <div class="metric-value" id="visibility">-- km</div>
+        <div class="metric-sub">Viewing distance</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Live data by
+    <a href="https://www.weatherapi.com/" target="_blank"
+       rel="noopener noreferrer" style="color:white">
+      WeatherAPI.com
+    </a>
+    · Temperatures in Celsius
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
